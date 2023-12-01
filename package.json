@@ -6,6 +6,7 @@
     "start": "vite",
     "build": "tsc && vite build",
     "preview": "npm run build && vite preview",
+    "deploy": "tsc && vite build && az storage blob upload-batch -s './dist' -d '$web' --overwrite --account-name 'stgfrontend1davydenko'",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
